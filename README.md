@@ -27,3 +27,5 @@ Finite State Machine and the Cheap Calculator
 ![运行效果](http://likui.online/images/CALC.png)
 
 [Fork Me](https://github.com/likui911/Calculator)
+
+[Contact Me](http://likui.online/)

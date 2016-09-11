@@ -62,6 +62,8 @@ void CalculatorDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
 	DDX_Control(pDX, IDC_RESULT_EDIT, m_editResult);
+	DDX_Text(pDX, IDC_RESULT_EDIT, m_output);
+	DDX_Control(pDX, IDC_BUTTON0, m_button0);
 	DDX_Control(pDX, IDC_BUTTON1, m_button1);
 	DDX_Control(pDX, IDC_BUTTON2, m_button2);
 	DDX_Control(pDX, IDC_BUTTON3, m_button3);
@@ -71,7 +73,6 @@ void CalculatorDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_BUTTON7, m_button7);
 	DDX_Control(pDX, IDC_BUTTON8, m_button8);
 	DDX_Control(pDX, IDC_BUTTON9, m_button9);
-	DDX_Control(pDX, IDC_BUTTON0, m_button0);
 	DDX_Control(pDX, IDC_BUTTON_ADD, m_buttonAdd);
 	DDX_Control(pDX, IDC_BUTTON_C, m_buttonC);
 	DDX_Control(pDX, IDC_BUTTON_CE, m_buttonCe);
@@ -82,7 +83,6 @@ void CalculatorDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_BUTTON_MUL, m_buttonMul);
 	DDX_Control(pDX, IDC_BUTTON_PLUSMINUS, m_buttonPlusMinus);
 	DDX_Control(pDX, IDC_BUTTON_POINT, m_buttonPoint);
-	DDX_Text(pDX, IDC_RESULT_EDIT, m_output);
 }
 
 BEGIN_MESSAGE_MAP(CalculatorDlg, CDialogEx)
@@ -148,9 +148,9 @@ BOOL CalculatorDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
 	m_resultFont.CreateFont(40, 0, 0, 0, FW_BLACK, 0, 0, 0, DEFAULT_CHARSET,
-		0, 0, 0, 0, _T("Consolas"));
+		0, 0, 0, 0, _T("Calibri"));
 	m_buttonFont.CreateFont(32, 0, 0, 0, ASFW_ANY, 0, 0, 0, DEFAULT_CHARSET,
-		0, 0, 0, 0, _T("Consolas"));
+		0, 0, 0, 0, _T("Calibri"));
 	m_editResult.SetFont(&m_resultFont);
 	m_button0.SetFont(&m_buttonFont);
 	m_button1.SetFont(&m_buttonFont);
@@ -174,6 +174,47 @@ BOOL CalculatorDlg::OnInitDialog()
 	m_buttonPlusMinus.SetFont(&m_buttonFont);
 	m_buttonPoint.SetFont(&m_buttonFont);
 
+	m_button0.SetDownColor(RGB(125, 125, 123));
+	m_button0.SetUpColor(RGB(152, 152, 152));
+	m_button1.SetDownColor(RGB(125, 125, 123));
+	m_button1.SetUpColor(RGB(152, 152, 152));
+	m_button2.SetDownColor(RGB(125, 125, 123));
+	m_button2.SetUpColor(RGB(152, 152, 152));
+	m_button3.SetDownColor(RGB(125, 125, 123));
+	m_button3.SetUpColor(RGB(152, 152, 152));
+	m_button4.SetDownColor(RGB(125, 125, 123));
+	m_button4.SetUpColor(RGB(152, 152, 152));
+	m_button5.SetDownColor(RGB(125, 125, 123));
+	m_button5.SetUpColor(RGB(152, 152, 152));
+	m_button6.SetDownColor(RGB(125, 125, 123));
+	m_button6.SetUpColor(RGB(152, 152, 152));
+	m_button7.SetDownColor(RGB(125, 125, 123));
+	m_button7.SetUpColor(RGB(152, 152, 152));
+	m_button8.SetDownColor(RGB(125, 125, 123));
+	m_button8.SetUpColor(RGB(152, 152, 152));
+	m_button9.SetDownColor(RGB(125, 125, 123));
+	m_button9.SetUpColor(RGB(152, 152, 152));
+	m_buttonAdd.SetDownColor(RGB(0, 130, 185));
+	m_buttonAdd.SetUpColor(RGB(0, 141, 202));
+	m_buttonC.SetDownColor(RGB(0, 98, 140));
+	m_buttonC.SetUpColor(RGB(0, 116, 166));
+	m_buttonMinus.SetDownColor(RGB(0, 130, 185));
+	m_buttonMinus.SetUpColor(RGB(0, 141, 202));
+	m_buttonMul.SetDownColor(RGB(0, 130, 185));
+	m_buttonMul.SetUpColor(RGB(0, 141, 202));
+	m_buttonDiv.SetDownColor(RGB(0, 130, 185));
+	m_buttonDiv.SetUpColor(RGB(0, 141, 202));
+	m_buttonEqual.SetDownColor(RGB(0, 103, 147));
+	m_buttonEqual.SetUpColor(RGB(0, 120, 172));
+	m_buttonDelete.SetDownColor(RGB(0, 98, 140));
+	m_buttonDelete.SetUpColor(RGB(0, 116, 166));
+	m_buttonPlusMinus.SetDownColor(RGB(111, 111, 111));
+	m_buttonPlusMinus.SetUpColor(RGB(128, 128, 128));
+	m_buttonPoint.SetDownColor(RGB(111, 111, 111));
+	m_buttonPoint.SetUpColor(RGB(128, 128, 128));
+	m_buttonCe.SetDownColor(RGB(0, 98, 140));
+	m_buttonCe.SetUpColor(RGB(0, 116, 166));
+	
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
 
@@ -233,25 +274,72 @@ void CalculatorDlg::OnInput(UINT nChar)
 		enterDigit(nChar-48);
 	}
 	switch (nChar) {
+		case 96:
+			enterDigit('0');
+			GetDlgItem(IDC_BUTTON0)->SetFocus();
+			break;
+		case 97:
+			enterDigit('1');
+			GetDlgItem(IDC_BUTTON1)->SetFocus();
+			break;
+		case 98:
+			enterDigit('2');
+			GetDlgItem(IDC_BUTTON2)->SetFocus();
+			break;
+		case 99:
+			enterDigit('3');
+			GetDlgItem(IDC_BUTTON3)->SetFocus();
+			break;
+		case 100:
+			enterDigit('4');
+			GetDlgItem(IDC_BUTTON4)->SetFocus();
+			break;
+		case 101:
+			enterDigit('5');
+			GetDlgItem(IDC_BUTTON5)->SetFocus();
+			break;
+		case 102:
+			enterDigit('6');
+			GetDlgItem(IDC_BUTTON6)->SetFocus();
+			break;
+		case 103:
+			enterDigit('7');
+			GetDlgItem(IDC_BUTTON7)->SetFocus();
+			break;
+		case 104:
+			enterDigit('8');
+			GetDlgItem(IDC_BUTTON8)->SetFocus();
+			break;
+		case 105:
+			enterDigit('9');
+			GetDlgItem(IDC_BUTTON9)->SetFocus();
+			break;
 		case 110:
 			enterDigit('.');
+			GetDlgItem(IDC_BUTTON_POINT)->SetFocus();
 			break;
 		case 107:
 			enterOperation(Calculator::CalcOp::Add);
+			GetDlgItem(IDC_BUTTON_ADD)->SetFocus();
 			break;
 		case 109:
 			enterOperation(Calculator::CalcOp::Substract);
+			GetDlgItem(IDC_BUTTON_MINUS)->SetFocus();
 			break;
 		case 106:
 			enterOperation(Calculator::CalcOp::Multiply);
+			GetDlgItem(IDC_BUTTON_MUL)->SetFocus();
 			break;
 		case 111:
 			enterOperation(Calculator::CalcOp::Divide);
+			GetDlgItem(IDC_BUTTON_DIV)->SetFocus();
 			break;
 		case 8:
+			GetDlgItem(IDC_BUTTON_DELETE)->SetFocus();
 			enterDelete();
 			break;
 		case 13:
+			GetDlgItem(IDC_BUTTON_EQUAL)->SetFocus();
 			enterEqual();
 			break;
 	}

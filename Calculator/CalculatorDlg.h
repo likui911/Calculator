@@ -6,6 +6,7 @@
 #include "afxwin.h"
 #include "Calculator.h"
 #include "afxext.h"
+#include "CalculatorButton.h"
 
 
 // CalculatorDlg dialog
@@ -39,29 +40,29 @@ public:
 	CFont m_resultFont;
 	CFont m_buttonFont;
 	CEdit m_editResult;
-	CButton m_button1;
-	CButton m_button2;
-	CButton m_button3;
-	CButton m_button4;
-	CButton m_button5;
-	CButton m_button6;
-	CButton m_button7;
-	CButton m_button8;
-	CButton m_button9;
-	CButton m_button0;
-	CButton m_buttonAdd;
-	CButton m_buttonC;
-	CButton m_buttonCe;
-	CButton m_buttonDelete;
-	CButton m_buttonDiv;
-	CButton m_buttonEqual;
-	CButton m_buttonMinus;
-	CButton m_buttonMul;
-	CButton m_buttonPlusMinus;
-	CButton m_buttonPoint;
 	CString m_output;
 	Calculator m_calculator;
-	
+	CalculatorButton m_button0;
+	CalculatorButton m_button1;
+	CalculatorButton m_button2;
+	CalculatorButton m_button3;
+	CalculatorButton m_button4;
+	CalculatorButton m_button5;
+	CalculatorButton m_button6;
+	CalculatorButton m_button7;
+	CalculatorButton m_button8;
+	CalculatorButton m_button9;
+	CalculatorButton m_buttonAdd;
+	CalculatorButton m_buttonC;
+	CalculatorButton m_buttonCe;
+	CalculatorButton m_buttonDelete;
+	CalculatorButton m_buttonDiv;
+	CalculatorButton m_buttonEqual;
+	CalculatorButton m_buttonMinus;
+	CalculatorButton m_buttonMul;
+	CalculatorButton m_buttonPlusMinus;
+	CalculatorButton m_buttonPoint;
+
 	void OnBnClickedNum0();
 	void OnBnClickedNum1();
 	void OnBnClickedNum2();
@@ -91,4 +92,5 @@ public:
 	void enterCE();
 	void enterDelete();
 	virtual BOOL PreTranslateMessage(MSG* pMsg);
+
 };

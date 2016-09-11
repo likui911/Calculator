@@ -182,12 +182,10 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="AboutCalculator.h" />
     <ClInclude Include="Calculator.h" />
     <ClInclude Include="CalculatorApp.h" />
+    <ClInclude Include="CalculatorButton.h" />
     <ClInclude Include="CalculatorDlg.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
@@ -197,6 +195,7 @@
     <ClCompile Include="AboutCalculator.cpp" />
     <ClCompile Include="Calculator.cpp" />
     <ClCompile Include="CalculatorApp.cpp" />
+    <ClCompile Include="CalculatorButton.cpp" />
     <ClCompile Include="CalculatorDlg.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

@@ -269,10 +269,6 @@ HCURSOR CalculatorDlg::OnQueryDragIcon()
 
 void CalculatorDlg::OnInput(UINT nChar)
 {
-	if (nChar >= 96 && nChar <= 105)
-	{
-		enterDigit(nChar-48);
-	}
 	switch (nChar) {
 		case 96:
 			enterDigit('0');

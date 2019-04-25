@@ -18,14 +18,3 @@ Finite State Machine and the Cheap Calculator
 4. 此时当用户再次点击1-9、0、Point按钮，软件进入Operand_2 状态。
 5. 如果用户点击=按钮，软件就进入了Start状态。
 6. 如果此时进行的是除法运算且除数为0，软件进入Error状态，用户只有点击C按钮才可以跳出。
-
-在实际开发的过程中，我们只需要关心现在程序处在什么状态，可以进行什么样的操作。然后就是状态转换的条件要处理下。
-
-![状态图](http://likui.online/images/HSM.png)
-
-## 运行效果展示
-![运行效果](http://likui.online/images/CALC.png)
-
-[Fork Me](https://github.com/likui911/Calculator)
-
-[Contact Me](http://likui.online/)
